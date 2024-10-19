@@ -5,6 +5,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/randompwd',
+    },
+    {
+      path: '/syen',
       name: 'SymmetricEncryption',
       component: () => import('../views/encrypt_decrypt.vue'),
       meta: { title: 'SymmetricEncryption' }  // 定义 title

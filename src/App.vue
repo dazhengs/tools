@@ -28,14 +28,14 @@
             <template #title>{{ $t('nav.encryption') }}</template>
             <el-menu-item index="/randompwd">{{ $t('nav.random_password') }}</el-menu-item>
             <el-menu-item index="/file_encrypt">{{ $t('nav.file_encrypt') }}</el-menu-item>
-            <el-menu-item index="/">{{ $t('nav.symmetric_encryption') }}</el-menu-item>
+            <el-menu-item index="/syen">{{ $t('nav.symmetric_encryption') }}</el-menu-item>
             <el-menu-item index="/asen">{{ $t('nav.asymmetric_encryption') }}</el-menu-item>
           </el-sub-menu>
 
  
             <el-menu-item v-if="!isMobile" index="/randompwd">{{ $t('nav.random_password') }}</el-menu-item>
             <el-menu-item v-if="!isMobile" index="/file_encrypt">{{ $t('nav.file_encrypt') }}</el-menu-item>
-            <el-menu-item v-if="!isMobile" index="/">{{ $t('nav.symmetric_encryption') }}</el-menu-item>
+            <el-menu-item v-if="!isMobile" index="/syen">{{ $t('nav.symmetric_encryption') }}</el-menu-item>
             <el-menu-item v-if="!isMobile" index="/asen">{{ $t('nav.asymmetric_encryption') }}</el-menu-item>
    
 
