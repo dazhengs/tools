@@ -15,6 +15,7 @@ This is a tool library that supports multiple encryption and encoding algorithms
 4. **Encoding and Decoding**: Provides encoding and decoding for formats like Unicode, UTF-8, Hex, URL, Base64, and MD5, facilitating the handling of various data formats.
 5. **Random Password Generation**: Features a random complex password generator to ensure password strength and security.
 6. **Standalone Operation**: Works without backend services and can be used offline, providing security and reliability in any environment.
+7. **Images to PDF** : Convert multiple images into one PDF.
 
 This toolkit is designed to offer comprehensive encryption, decryption, and encoding solutions for various use cases.
 
