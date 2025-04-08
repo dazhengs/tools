@@ -1,6 +1,6 @@
 {
   "name": "dazhengtools",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -17,6 +17,7 @@
     "element-plus": "^2.8.4",
     "flag-icons": "^7.2.3",
     "jsencrypt": "^3.3.2",
+    "jspdf": "^3.0.1",
     "pinia": "^2.2.4",
     "sm-crypto": "^0.3.13",
     "vue": "^3.4.29",

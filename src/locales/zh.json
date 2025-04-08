@@ -132,5 +132,13 @@
         "decryptFile": "解密文件",
         "downloadEncryptedFile": "下载加密文件",
         "downloadDecryptedFile": "下载解密文件"
+    },
+    "imageToPdf":{
+        "nav":"图片转PDF",
+        "title":"多个图片转为一个PDF",
+        "uploadImages":"上传图片-支持多选",
+        "convertToPdf":"生成PDF",
+        "downloadPdf": "下载PDF",
+        "viewPdf": "预览PDF"
     }
 }

@@ -53,6 +53,16 @@ const router = createRouter({
     },
 
     {
+      path: '/image2pdf',
+      name: 'image2pdf',
+      // route level code-splitting
+      // this generates a separate chunk (hash.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/image2pdf.vue'),
+      meta: { title: 'Image2Pdf' }  // 定义 title
+    },
+
+    {
       path: '/randompwd',
       name: 'randompwd',
       // route level code-splitting

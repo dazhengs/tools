@@ -134,8 +134,13 @@
         "decryptFile": "Decrypt File",
         "downloadEncryptedFile": "Download Encrypted File",
         "downloadDecryptedFile": "Download Decrypted File"
+    },
+    "imageToPdf": {
+        "nav":"Image2Pdf",
+        "title": "Convert Multiple Images to One PDF",
+        "uploadImages": "Upload Images (Supports Multiple Selection)",
+        "convertToPdf": "Generate PDF",
+        "downloadPdf": "Download PDF",
+        "viewPdf": "View PDF"
     }
-        
-
-
 }

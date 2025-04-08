@@ -30,9 +30,11 @@
             <el-menu-item index="/file_encrypt">{{ $t('nav.file_encrypt') }}</el-menu-item>
             <el-menu-item index="/syen">{{ $t('nav.symmetric_encryption') }}</el-menu-item>
             <el-menu-item index="/asen">{{ $t('nav.asymmetric_encryption') }}</el-menu-item>
+            <el-menu-item index="/image2pdf">{{ $t('imageToPdf.nav') }}</el-menu-item>
           </el-sub-menu>
 
  
+            <el-menu-item v-if="!isMobile" index="/image2pdf">{{ $t('imageToPdf.nav') }}</el-menu-item>
             <el-menu-item v-if="!isMobile" index="/randompwd">{{ $t('nav.random_password') }}</el-menu-item>
             <el-menu-item v-if="!isMobile" index="/file_encrypt">{{ $t('nav.file_encrypt') }}</el-menu-item>
             <el-menu-item v-if="!isMobile" index="/syen">{{ $t('nav.symmetric_encryption') }}</el-menu-item>
