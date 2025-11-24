@@ -2,7 +2,7 @@
 
 [中文](./README_CN.md)
 
-click [https://dazhengs.github.io/tools/](https://dazhengs.github.io/tools/) or [https://tools.dazheng.site](https://tools.dazheng.site) to use this dazhengTools.
+click [https://dazhengs.github.io/tools/](https://dazhengs.github.io/tools/) or [https://tools.dazheng.space](https://tools.dazheng.space) to use this dazhengTools.
 
 This is a tool library that supports multiple encryption and encoding algorithms. It is fully implemented in JavaScript and can be used offline/offline to ensure data security. It has the following functions:
 
