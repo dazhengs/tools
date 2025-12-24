@@ -95,29 +95,7 @@ const handleFileRemove = (uploadFile, uploadFiles) => {
     }
 };
 
-// Image compression utility (optional, but good for performance)
-const compressImage = (img, maxWidth, maxHeight, quality = 0.7) => {
-    return new Promise((resolve) => {
-        const canvas = document.createElement("canvas");
-        const ctx = canvas.getContext("2d");
-        let { width, height } = img;
-
-        // Calculate scaling
-        if (width > maxWidth || height > maxHeight) {
-            const ratio = Math.min(maxWidth / width, maxHeight / height);
-            width *= ratio;
-            height *= ratio;
-        }
-
-        canvas.width = width;
-        canvas.height = height;
-        ctx.drawImage(img, 0, 0, width, height);
-
-        // Get blob with specified quality
-        canvas.toBlob((blob) => resolve(blob), "image/jpeg", quality);
-    });
-};
-
+// Image compression removed to prefer quality
 const generatePDF = async () => {
     if (rawFiles.value.length === 0) {
         ElMessage.warning($t ? $t('imageToPdf.warningNoImages') : "Please upload at least one image.");
@@ -140,53 +118,54 @@ const generatePDF = async () => {
         for (let i = 0; i < rawFiles.value.length; i++) {
             const file = rawFiles.value[i];
             const img = new Image();
-            img.src = URL.createObjectURL(file); // Use object URL from raw file
+            const objectUrl = URL.createObjectURL(file);
+            img.src = objectUrl; // Use object URL from raw file
 
             await new Promise((resolve, reject) => {
-                img.onload = async () => {
+                img.onload = () => {
                     try {
-                        // Optional: Compress image before adding to PDF
-                        // Adjust maxWidth/maxHeight as needed, potentially based on PDF page size
-                        const compressedBlob = await compressImage(img, pdfWidth * 3, pdfHeight * 3, 0.7); // Higher res for better quality PDF
+                        const imgWidth = img.width;
+                        const imgHeight = img.height;
+                        const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+
+                        const displayWidth = imgWidth * ratio;
+                        const displayHeight = imgHeight * ratio;
+
+                        // Center image on page
+                        const x = (pdfWidth - displayWidth) / 2;
+                        const y = (pdfHeight - displayHeight) / 2;
+
+                        if (i > 0) pdf.addPage();
+
+                        // Read the original file directly as Data URL
                         const reader = new FileReader();
-
-                        reader.readAsDataURL(compressedBlob);
+                        reader.readAsDataURL(file);
                         reader.onloadend = () => {
-                            const compressedImgDataUrl = reader.result;
-                            const imgProps = pdf.getImageProperties(compressedImgDataUrl);
+                            const imgDataUrl = reader.result;
+                            
+                            // Determine format based on file type
+                            let format = 'JPEG';
+                            if (file.type === 'image/png') format = 'PNG';
+                            else if (file.type === 'image/webp') format = 'WEBP';
+                            
+                            pdf.addImage(imgDataUrl, format, x, y, displayWidth, displayHeight);
 
-                            // Calculate image dimensions to fit A4 page, maintaining aspect ratio
-                            const imgWidth = imgProps.width;
-                            const imgHeight = imgProps.height;
-                            const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
-
-                            const displayWidth = imgWidth * ratio;
-                            const displayHeight = imgHeight * ratio;
-
-                            // Center image on page (optional)
-                            const x = (pdfWidth - displayWidth) / 2;
-                            const y = (pdfHeight - displayHeight) / 2;
-
-
-                            if (i > 0) pdf.addPage();
-                            pdf.addImage(compressedImgDataUrl, "JPEG", x, y, displayWidth, displayHeight);
-
-                            URL.revokeObjectURL(img.src); // Clean up object URL
+                            URL.revokeObjectURL(objectUrl); // Clean up object URL
                             resolve();
                         };
                         reader.onerror = (e) => {
-                            URL.revokeObjectURL(img.src);
+                            URL.revokeObjectURL(objectUrl);
                             console.error("FileReader error:", e);
-                            reject(new Error(`Failed to read compressed image for ${file.name}`));
+                            reject(new Error(`Failed to read image for ${file.name}`));
                         };
-                    } catch (compressError) {
-                        URL.revokeObjectURL(img.src);
-                        console.error("Image compression error:", compressError);
-                        reject(new Error(`Failed to compress image ${file.name}`));
+                    } catch (err) {
+                        URL.revokeObjectURL(objectUrl);
+                        console.error("PDF add image error:", err);
+                        reject(new Error(`Failed to add image ${file.name} to PDF`));
                     }
                 };
                 img.onerror = (e) => {
-                    URL.revokeObjectURL(img.src); // Clean up object URL
+                    URL.revokeObjectURL(objectUrl); // Clean up object URL
                     console.error("Image load error:", e);
                     reject(new Error(`Failed to load image ${file.name}`));
                 };
