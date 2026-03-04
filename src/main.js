@@ -4,10 +4,14 @@ import { createApp } from 'vue'
 import { createPinia } from 'pinia';
 import { useMainStore } from './store';
 import './assets/base.css'
+import './assets/tailwind.css'
+
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css'
 import { analytics } from './utils/use-analytics';
 import App from './App.vue'
+
+
 // 统一导入el-icon图标
 import * as ElIconModules from '@element-plus/icons-vue'
 import i18n from './i18n';
@@ -22,7 +26,7 @@ router.beforeEach((to, from, next) => {
     const defaultTitle = 'dazheng.site';  // 默认标题
     document.title = to.meta.title + ' | ' + defaultTitle;  // 设置标题
     next();
-  });
+});
 
 
 
@@ -30,7 +34,7 @@ const app = createApp(App)
 const pinia = createPinia();
 
 app.use(pinia);
-const store = useMainStore(pinia); 
+const store = useMainStore(pinia);
 
 
 // 启动 Google Analytics
@@ -47,7 +51,7 @@ app.config.globalProperties.$trackEvent = function (category, action, label) {
 
 // 根据当前语言选择Element Plus的语言包
 app.use(ElementPlus, {
-  locale: i18n.global.locale === 'zh' ? zhLocale : enLocale
+    locale: i18n.global.locale === 'zh' ? zhLocale : enLocale
 });
 
 app.use(i18n);
@@ -63,7 +67,7 @@ const os = detectOS();
 
 // 窗口大小变化处理
 function handleResize() {
-    store.setIsMobile(window.innerWidth < 768 || os.isAndroid || os.isIOS );
+    store.setIsMobile(window.innerWidth < 768 || os.isAndroid || os.isIOS);
 }
 handleResize();
 

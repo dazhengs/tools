@@ -73,7 +73,7 @@
             "rsa": "RSA-2048",
             "sm2": "SM2",
             "generateButton": "生成密钥",
-            "elmsg_succ":"公钥和私钥已填充到 tab 标签对应的位置"
+            "elmsg_succ": "公钥和私钥已填充到 tab 标签对应的位置"
         },
         "encryption": {
             "encryption": "加密",
@@ -82,8 +82,8 @@
             "message": "消息",
             "encryptedMessage": "已加密的消息",
             "encryptButton": "加密",
-            "placeholder_pk":"请输入你的公钥",
-            "placeholder_msg":"请输入你要加密的文本"
+            "placeholder_pk": "请输入你的公钥",
+            "placeholder_msg": "请输入你要加密的文本"
         },
         "decryption": {
             "decryption": "解密",
@@ -92,9 +92,9 @@
             "encryptedMessage": "加密的消息",
             "decryptedMessage": "解密的消息",
             "decryptButton": "解密",
-            "placeholder_prik":"请输入你的私钥",
-            "placeholder_msg":"请输入要解密的密文",
-            "placeholder_decryptedMessage":"此处展示解密后的明文"
+            "placeholder_prik": "请输入你的私钥",
+            "placeholder_msg": "请输入要解密的密文",
+            "placeholder_decryptedMessage": "此处展示解密后的明文"
         },
         "signature": {
             "signature": "签名",
@@ -102,9 +102,8 @@
             "message": "消息",
             "signatureMessage": "签名的消息",
             "signatureButton": "签名",
-            "placeholder_prik":"请输入你的私钥",
-            "placeholder_msg":"请输入你要签名的文本内容"
-
+            "placeholder_prik": "请输入你的私钥",
+            "placeholder_msg": "请输入你要签名的文本内容"
         },
         "verification": {
             "verification": "验签",
@@ -116,9 +115,9 @@
             "verificationResults": "验证结果",
             "validSignature": "签名有效",
             "invalidSignature": "签名无效",
-            "placeholder_pk":"请输入公钥",
-            "placeholder_msg":"请输入要验签的文本【签名前的文本】",
-            "placeholder_signatureMessage":"请输入签名的消息"
+            "placeholder_pk": "请输入公钥",
+            "placeholder_msg": "请输入要验签的文本【签名前的文本】",
+            "placeholder_signatureMessage": "请输入签名的消息"
         }
     },
     "fileEncryption": {
@@ -133,12 +132,50 @@
         "downloadEncryptedFile": "下载加密文件",
         "downloadDecryptedFile": "下载解密文件"
     },
-    "imageToPdf":{
-        "nav":"图片转PDF",
-        "title":"多个图片转为一个PDF",
-        "uploadImages":"上传图片-支持多选",
-        "convertToPdf":"生成PDF",
+    "imageToPdf": {
+        "nav": "图片转PDF",
+        "title": "多个图片转为一个PDF",
+        "uploadImages": "上传图片-支持多选",
+        "convertToPdf": "生成PDF",
         "downloadPdf": "下载PDF",
         "viewPdf": "预览PDF"
+    },
+    "home": {
+        "title": "安全工具箱",
+        "subtitle": "简单安全的本地工具",
+        "tools": {
+            "randomPwd": {
+                "title": "随机密码生成",
+                "description": "生成高强度、安全的随机密码，支持多种字符组合配置。"
+            },
+            "fileEncrypt": {
+                "title": "文件加解密",
+                "description": "基于 AES 的本地文件加密与解密，保护隐私数据。"
+            },
+            "syEn": {
+                "title": "对称加密",
+                "description": "AES、DES、RC4 等主流对称加密算法测试。"
+            },
+            "asEn": {
+                "title": "非对称加密",
+                "description": "RSA / SM2 密钥生成、加解密、签名验签。"
+            },
+            "image2pdf": {
+                "title": "图片转 PDF",
+                "description": "本地将多张图片合并为高质量 PDF。"
+            },
+            "encoding": {
+                "title": "编码转换",
+                "description": "Base64、URL 等编码格式转换与解码。"
+            },
+            "hash": {
+                "title": "哈希计算",
+                "description": "MD5、SHA1、SHA256 等摘要算法。"
+            },
+            "about": {
+                "title": "关于本项目",
+                "description": "项目背景、版本信息与贡献说明。"
+            }
+        }
     }
 }

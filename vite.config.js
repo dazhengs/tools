@@ -11,7 +11,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // Determine the base path based on the mode
-  const base = mode === 'production' ? '/' : '/tools';
+  const base = mode === 'production' ? '/sectools' : '/tools';
 
   return {
     base, // Use the determined base path
@@ -27,6 +27,24 @@ export default defineConfig(({ mode }) => {
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))
+      }
+    },
+    build: {
+      chunkSizeWarningLimit: 1600,
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes('node_modules')) {
+              if (id.includes('element-plus')) {
+                return 'element-plus';
+              }
+              if (id.includes('jspdf')) {
+                return 'jspdf';
+              }
+              return 'vendor';
+            }
+          }
+        }
       }
     }
   };

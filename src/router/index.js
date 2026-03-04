@@ -5,7 +5,9 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      redirect: '/randompwd',
+      name: 'home',
+      component: () => import('../views/home.vue'),
+      meta: { title: '首页' }
     },
     {
       path: '/syen',

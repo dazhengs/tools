@@ -41,7 +41,6 @@
     },
     "copySuccess": "Password copied to clipboard!",
     "textCopySuccess": "Text copied successfully!",
-
     "copyFail": "Failed to copy password.",
     "random_password": {
         "title": "Random Password Generator",
@@ -56,7 +55,6 @@
         "includeSpecialChars": "Include Special Characters",
         "errorMessage": "Password length must be between 4 and 128 characters."
     },
-
     "publicKey": "Public Key",
     "privateKey": "Private Key",
     "rsasm2": {
@@ -75,7 +73,7 @@
             "rsa": "RSA-2048",
             "sm2": "SM2",
             "generateButton": "Generate Keys",
-            "elmsg_succ":"PublicKey and PrivateKey is filled."
+            "elmsg_succ": "PublicKey and PrivateKey is filled."
         },
         "encryption": {
             "encryption": "Encryption",
@@ -84,8 +82,8 @@
             "message": "Message",
             "encryptedMessage": "Encrypted Message",
             "encryptButton": "Encrypt",
-            "placeholder_pk":"Enter your public key",
-            "placeholder_msg":"Enter your message"
+            "placeholder_pk": "Enter your public key",
+            "placeholder_msg": "Enter your message"
         },
         "decryption": {
             "decryption": "Decryption",
@@ -94,9 +92,9 @@
             "encryptedMessage": "Encrypted Message",
             "decryptedMessage": "Decrypted Message",
             "decryptButton": "Decrypt",
-            "placeholder_prik":"Enter your private key",
-            "placeholder_msg":"Enter your encrypted message",
-            "placeholder_decryptedMessage":"Your decrypted Message will display here"
+            "placeholder_prik": "Enter your private key",
+            "placeholder_msg": "Enter your encrypted message",
+            "placeholder_decryptedMessage": "Your decrypted Message will display here"
         },
         "signature": {
             "signature": "Signature",
@@ -104,8 +102,8 @@
             "message": "Message",
             "signatureMessage": "Signature Message",
             "signatureButton": "Signature",
-            "placeholder_prik":"Enter Private key",
-            "placeholder_msg":"Enter your message"
+            "placeholder_prik": "Enter Private key",
+            "placeholder_msg": "Enter your message"
         },
         "verification": {
             "verification": "Verification",
@@ -117,12 +115,11 @@
             "verificationResults": "Verification Results",
             "validSignature": "Signature is valid",
             "invalidSignature": "Signature is invalid",
-            "placeholder_pk":"Enter Public key",
-            "placeholder_msg":"Enter message",
-            "placeholder_signatureMessage":"Enter Signature message"
+            "placeholder_pk": "Enter Public key",
+            "placeholder_msg": "Enter message",
+            "placeholder_signatureMessage": "Enter Signature message"
         }
     },
-
     "fileEncryption": {
         "title": "File Encryption and Decryption Tool (Supports large files, using AES-256-CBC mode)",
         "uploadFile": "Upload File",
@@ -136,11 +133,49 @@
         "downloadDecryptedFile": "Download Decrypted File"
     },
     "imageToPdf": {
-        "nav":"Image2Pdf",
+        "nav": "Image2Pdf",
         "title": "Convert Multiple Images to One PDF",
         "uploadImages": "Upload Images (Supports Multiple Selection)",
         "convertToPdf": "Generate PDF",
         "downloadPdf": "Download PDF",
         "viewPdf": "View PDF"
+    },
+    "home": {
+        "title": "Safe Toolbox",
+        "subtitle": "Simple and safe local tools",
+        "tools": {
+            "randomPwd": {
+                "title": "Random Password Generator",
+                "description": "Generate high-strength, safe random passwords, support various character combination configurations."
+            },
+            "fileEncrypt": {
+                "title": "File Encryption",
+                "description": "Local file encryption and decryption based on AES, protecting privacy data."
+            },
+            "syEn": {
+                "title": "Symmetric Encryption",
+                "description": "Mainstream symmetric encryption algorithm tests such as AES/DES/RC4."
+            },
+            "asEn": {
+                "title": "Asymmetric Encryption",
+                "description": "RSA / SM2 key generation, encryption and decryption, signature and verification."
+            },
+            "image2pdf": {
+                "title": "Image to PDF",
+                "description": "Locally merge multiple images into high-quality PDF."
+            },
+            "encoding": {
+                "title": "Encoding Conversion",
+                "description": "Base64, URL and other encoding format conversion and decoding."
+            },
+            "hash": {
+                "title": "Hash Calculation",
+                "description": "Summary algorithms such as MD5, SHA1, SHA256."
+            },
+            "about": {
+                "title": "About This Project",
+                "description": "Project background, version information and contribution description."
+            }
+        }
     }
 }
