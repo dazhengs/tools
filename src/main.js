@@ -10,7 +10,7 @@ import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css'
 // import { analytics } from './utils/use-analytics';
 import App from './App.vue'
-import gtagPlugin from './plugins/gtag'           // ← new
+import { configure } from "vue-gtag"
 
 
 // 统一导入el-icon图标
@@ -50,6 +50,15 @@ const store = useMainStore(pinia);
 //     });
 // };
 
+
+// Initialize vue-gtag
+configure({
+    tagId: import.meta.env.VITE_GA_MEASUREMENT_ID,
+    pageTracker: {
+        router, // Passes your router instance for automatic page tracking
+    }
+})
+
 // 根据当前语言选择Element Plus的语言包
 app.use(ElementPlus, {
     locale: i18n.global.locale === 'zh' ? zhLocale : enLocale
@@ -60,7 +69,6 @@ for (const iconName in ElIconModules) {
     app.component(iconName, ElIconModules[iconName])
 }
 app.use(router)
-app.use(gtagPlugin, router)
 
 // 在应用启动时设置语言
 store.lang = i18n.global.locale;
