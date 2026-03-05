@@ -23,7 +23,7 @@ import router from './router'
 
 
 router.beforeEach((to, from, next) => {
-    const defaultTitle = 'dazheng.site';  // 默认标题
+    const defaultTitle = 'dazheng.space';  // 默认标题
     document.title = to.meta.title + ' | ' + defaultTitle;  // 设置标题
     next();
 });
