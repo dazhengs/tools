@@ -62,7 +62,7 @@ import AES_GCM from '@/utils/aes-gcm.js';
 import AES from '@/utils/cryptojs-aes.js';
 import SM4 from '@/utils/sm-crypto-sm4.js';
 import CopyTextarea from './component/copy_textarea.vue';
-import { trackEvent } from '@/utils/use-analytics';
+// import { trackEvent } from '@/utils/use-analytics';
 import { useI18n } from 'vue-i18n'; // Add this import
 const inputText = ref('');
 const outputText = ref('');
@@ -173,7 +173,7 @@ const encrypt = async () => {
     // outputText.value = 'Error: Unable to encrypt. Please check your input and key.';
     outputText.value = `Error: Unable to encrypt. ${error} Please check your input, key, and selected method.`;
   }
-  trackEvent('Buttons', 'ToggleClick', keyGenMethod.value + ' encrypt');
+  //trackEvent('Buttons', 'ToggleClick', keyGenMethod.value + ' encrypt');
 };
 
 const decrypt = async () => {
@@ -215,7 +215,7 @@ const decrypt = async () => {
     console.error('Decryption error:', error);
     outputText.value = `Error: Unable to decrypt. ${error} Please check your input, key, and selected method.`;
   }
-  trackEvent('Buttons', 'ToggleClick', keyGenMethod.value + ' decrypted');
+  //trackEvent('Buttons', 'ToggleClick', keyGenMethod.value + ' decrypted');
 };
 </script>
 

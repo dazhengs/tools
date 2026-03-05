@@ -8,8 +8,9 @@ import './assets/tailwind.css'
 
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css'
-import { analytics } from './utils/use-analytics';
+// import { analytics } from './utils/use-analytics';
 import App from './App.vue'
+import gtagPlugin from './plugins/gtag'           // ← new
 
 
 // 统一导入el-icon图标
@@ -37,17 +38,17 @@ app.use(pinia);
 const store = useMainStore(pinia);
 
 
-// 启动 Google Analytics
-analytics.page();
-app.config.globalProperties.$analytics = analytics;
+// // 启动 Google Analytics
+// analytics.page();
+// app.config.globalProperties.$analytics = analytics;
 
-// 注册全局事件跟踪函数，改造完程序后移除
-app.config.globalProperties.$trackEvent = function (category, action, label) {
-    analytics.track(action, {
-        category: category,
-        label: label,
-    });
-};
+// // 注册全局事件跟踪函数，改造完程序后移除
+// app.config.globalProperties.$trackEvent = function (category, action, label) {
+//     analytics.track(action, {
+//         category: category,
+//         label: label,
+//     });
+// };
 
 // 根据当前语言选择Element Plus的语言包
 app.use(ElementPlus, {
@@ -59,6 +60,7 @@ for (const iconName in ElIconModules) {
     app.component(iconName, ElIconModules[iconName])
 }
 app.use(router)
+app.use(gtagPlugin, router)
 
 // 在应用启动时设置语言
 store.lang = i18n.global.locale;

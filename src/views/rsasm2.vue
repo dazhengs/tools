@@ -208,7 +208,7 @@
 import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import CopyTextarea from './component/copy_textarea.vue';
-import { trackEvent } from '@/utils/use-analytics';
+// import { trackEvent } from '@/utils/use-analytics';
 import { useI18n } from 'vue-i18n'; // Add this import
 const {t} = useI18n();
 // Import encryption libraries (you'll need to add these to your project)
@@ -248,7 +248,7 @@ const generateKeys = () => {
         ElMessage.warning('Key generation is already in progress. Please wait.'); // Alert the user
         return; // Prevent further execution
     }
-    trackEvent('Buttons', 'ToggleClick', 'generateKeys');
+    //trackEvent('Buttons', 'ToggleClick', 'generateKeys');
     isGenerating.value = true; // Set loading state to true
     // Use setTimeout to simulate async behavior
 
@@ -302,7 +302,7 @@ const encrypt = () => {
     } catch (error) {
         ElMessage.error('Encryption failed: ' + error.message)
     }
-    trackEvent('Buttons', 'ToggleClick', encryptionMethod.value + ' encrypt');
+    //trackEvent('Buttons', 'ToggleClick', encryptionMethod.value + ' encrypt');
 }
 
 const signature = () => {
@@ -323,7 +323,7 @@ const signature = () => {
     } catch (error) {
         ElMessage.error('Signature failed: ' + error.message);
     }
-    trackEvent('Buttons', 'ToggleClick', encryptionMethod.value + ' signature');
+    //trackEvent('Buttons', 'ToggleClick', encryptionMethod.value + ' signature');
 };
 
 // Add a new function for signature verification
@@ -344,7 +344,7 @@ const verifySignature = () => {
     } catch (error) {
         ElMessage.error('Verification failed: ' + error.message);
     }
-    trackEvent('Buttons', 'ToggleClick', encryptionMethod.value + ' verifySignature');
+    //trackEvent('Buttons', 'ToggleClick', encryptionMethod.value + ' verifySignature');
 };
 
 
@@ -365,7 +365,7 @@ const decrypt = () => {
     } catch (error) {
         ElMessage.error('Decryption failed: ' + error.message)
     }
-    trackEvent('Buttons', 'ToggleClick', encryptionMethod.value + ' decrypt');
+    //trackEvent('Buttons', 'ToggleClick', encryptionMethod.value + ' decrypt');
 }
 </script>
 

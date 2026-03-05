@@ -42,7 +42,7 @@
   
   <script setup>
   import { ref } from 'vue';
-  import { trackEvent } from '@/utils/use-analytics';
+  // import { trackEvent } from '@/utils/use-analytics';
   import { useCrypto } from '@/utils/crypto.js';
   import CopyTextarea from '@/views/component/copy_textarea.vue';
   const selectedHash = ref('md5');
@@ -54,7 +54,7 @@
       console.error('Please select a hash algorithm and input text.');
       return;
     }
-    trackEvent('Buttons', 'ToggleClick', 'calculateHash');
+    //trackEvent('Buttons', 'ToggleClick', 'calculateHash');
     try {
       const crypto = useCrypto();
       const hash = await crypto[selectedHash.value](inputText.value);

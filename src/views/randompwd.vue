@@ -33,7 +33,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import { trackEvent } from '@/utils/use-analytics';
+// import { trackEvent } from '@/utils/use-analytics';
 import CopyTextarea from '@/views/component/copy_textarea.vue';
 const generatedPassword = ref('');
 const passwordLength = ref(8);
@@ -44,7 +44,7 @@ function generatePassword() {
         return
     }
 
-    trackEvent('Buttons', 'ToggleClick', 'generatePassword');
+    //trackEvent('Buttons', 'ToggleClick', 'generatePassword');
     const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
 
     let password = "";

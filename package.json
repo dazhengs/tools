@@ -10,9 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@analytics/google-analytics": "^1.0.7",
     "@element-plus/icons-vue": "^2.3.1",
-    "analytics": "^0.8.14",
     "crypto-js": "^4.2.0",
     "element-plus": "^2.8.4",
     "flag-icons": "^7.2.3",
@@ -21,6 +19,7 @@
     "pinia": "^2.2.4",
     "sm-crypto": "^0.3.13",
     "vue": "^3.4.29",
+    "vue-gtag": "^3.7.0",
     "vue-i18n": "^9.14.1",
     "vue-router": "^4.3.3"
   },

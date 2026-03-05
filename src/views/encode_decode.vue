@@ -29,7 +29,7 @@
 <script setup>
 import { ref } from 'vue';
 import CopyTextarea from './component/copy_textarea.vue';
-import { trackEvent } from '@/utils/use-analytics';
+// import { trackEvent } from '@/utils/use-analytics';
 const inputText = ref('');
 const outputText = ref('');
 const selectedMethod = ref('base64');
@@ -62,7 +62,7 @@ const encode = () => {
         default:
             outputText.value = 'Please select the coding method';
     }
-    trackEvent('Buttons', 'ToggleClick', selectedMethod.value + ' encode');
+    //trackEvent('Buttons', 'ToggleClick', selectedMethod.value + ' encode');
 };
 
 const decode = () => {
@@ -93,7 +93,7 @@ const decode = () => {
         default:
             outputText.value = 'Please select the decoding method';
     }
-    trackEvent('Buttons', 'ToggleClick', selectedMethod.value + ' decode');
+    //trackEvent('Buttons', 'ToggleClick', selectedMethod.value + ' decode');
 };
 </script>
 
