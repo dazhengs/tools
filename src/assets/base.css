@@ -63,7 +63,7 @@
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background);
+  background: #f5f5f7;
   transition:
     color 0.5s,
     background-color 0.5s;
@@ -92,7 +92,7 @@ body {
   max-width: 1200px;
   margin: 0px auto;
   padding: 20px;
-  border-radius: 16px;
+  border-radius: 28px;
   background-color: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
