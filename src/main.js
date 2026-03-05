@@ -8,7 +8,6 @@ import './assets/tailwind.css'
 
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css'
-import { analytics } from './utils/use-analytics';
 import App from './App.vue'
 
 
@@ -23,7 +22,7 @@ import router from './router'
 
 
 router.beforeEach((to, from, next) => {
-    const defaultTitle = 'dazheng.site';  // 默认标题
+    const defaultTitle = 'sec-tools';  // 默认标题
     document.title = to.meta.title + ' | ' + defaultTitle;  // 设置标题
     next();
 });
@@ -36,18 +35,6 @@ const pinia = createPinia();
 app.use(pinia);
 const store = useMainStore(pinia);
 
-
-// 启动 Google Analytics
-analytics.page();
-app.config.globalProperties.$analytics = analytics;
-
-// 注册全局事件跟踪函数，改造完程序后移除
-app.config.globalProperties.$trackEvent = function (category, action, label) {
-    analytics.track(action, {
-        category: category,
-        label: label,
-    });
-};
 
 // 根据当前语言选择Element Plus的语言包
 app.use(ElementPlus, {

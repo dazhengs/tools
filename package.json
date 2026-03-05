@@ -1,5 +1,5 @@
 {
-  "name": "dazhengtools",
+  "name": "sectools",
   "version": "1.0.0",
   "private": true,
   "type": "module",
@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@analytics/google-analytics": "^1.0.7",
     "@element-plus/icons-vue": "^2.3.1",
     "analytics": "^0.8.14",
     "crypto-js": "^4.2.0",

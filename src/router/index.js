@@ -7,7 +7,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: () => import('../views/home.vue'),
-      meta: { title: '首页' }
+      meta: { title: 'Home' }
     },
     {
       path: '/syen',

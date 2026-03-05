@@ -1,6 +1,6 @@
-# dazhengTools
+# secTools
 
-点击 [https://dazhengs.github.io/tools/](https://dazhengs.github.io/tools/) 或 [https://tools.dazheng.space](https://tools.dazheng.space) 来使用 dazhengTools.
+点击 [https://secs.github.io/tools/](https://secs.github.io/tools/) 或 [https://tools.sec.space](https://tools.sec.space) 来使用 secTools.
 
 这是一个支持多种加密与编码算法的工具库，完全使用 JavaScript 实现，可以离线/断网使用，确保数据安全，具备以下功能：
 
